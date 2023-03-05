@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  #配置时区
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  # 配置数据源信息
+  datasource:
+    # 配置数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    # 配置连接数据库信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-bp142lb03717y8daupo.mysql.rds.aliyuncs.com:3306/music?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: Music2022
+  # 配置MyBatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+user:
+  # 默认头像地址
+  default-avatar: /music/photo/avator/default
+  avatar-parent-path: /music/photo/avator/
+music:
+  # 音频相关父路径
+  local-storage-parent-path: /home/music/storage/
+  # local-storage-parent-path: B:/music/
+  remote-storage-parent-path: music/music/
+  musicImg-parent-path: /music/photo/music/
+qiniu:
+  AccessKey: ClKlr0st1nn2IrLIEI846K8VG06aShpRazIFrSDl
+  SecretKey: 0PlgSkJwR9OUV7Q9GiPEwYEhIcrN8tuBoaAl7Izl
+ip: http://47.103.149.25:8081
